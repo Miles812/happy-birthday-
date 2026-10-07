@@ -1,0 +1,370 @@
+:root {
+  --pink: #ffb8cb;
+  --hot-pink: #ef7298;
+  --cream: #fff8e9;
+  --paper: #fffdf7;
+  --brown: #5d3c45;
+  --soft-brown: #86616b;
+  --blue: #a8d8e8;
+  --yellow: #ffe4a3;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--brown);
+  font-family: "Baloo 2", system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 20% 10%, #fff 0 9%, transparent 10%),
+    radial-gradient(circle at 85% 28%, #fff 0 8%, transparent 9%),
+    linear-gradient(180deg, #ffeaf0 0%, #fff8e9 48%, #dff3f4 100%);
+}
+
+button { font: inherit; }
+
+.sky-doodles span {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  color: #ed86a4;
+  opacity: .45;
+  animation: floaty 5s ease-in-out infinite;
+}
+.sky-doodles span:nth-child(1){left:5%;top:17%;font-size:26px}
+.sky-doodles span:nth-child(2){left:88%;top:12%;font-size:18px;animation-delay:1s}
+.sky-doodles span:nth-child(3){left:92%;top:67%;font-size:30px;animation-delay:2s}
+.sky-doodles span:nth-child(4){left:7%;top:75%;font-size:22px;animation-delay:1.5s}
+.sky-doodles span:nth-child(5){left:78%;top:43%;font-size:24px;animation-delay:.5s}
+.sky-doodles span:nth-child(6){left:15%;top:47%;font-size:20px;animation-delay:2.5s}
+.sky-doodles span:nth-child(7){left:55%;top:9%;font-size:18px;animation-delay:1.8s}
+
+main { position: relative; z-index: 1; }
+
+.hero {
+  min-height: 100svh;
+  padding: 35px 18px 45px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.tiny-note {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 2px dashed #ef9bb2;
+  border-radius: 999px;
+  background: #fff9f0cc;
+  color: var(--hot-pink);
+  font-size: .82rem;
+  transform: rotate(-2deg);
+}
+
+.hero-art {
+  width: min(620px, 100%);
+  margin: 12px auto -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.character-frame {
+  width: min(550px, 88vw);
+  height: 230px;
+  overflow: hidden;
+  border-radius: 42% 48% 44% 46%;
+  border: 5px solid #fff;
+  box-shadow: 0 10px 0 #ef9bb244, 0 18px 35px #a9607720;
+  background: white;
+  transform: rotate(1deg);
+}
+.character-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 62%;
+}
+
+.sticker {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 45% 55% 52% 48%;
+  background: #fff;
+  border: 3px solid #f5b5c6;
+  color: var(--hot-pink);
+  font-size: 25px;
+  box-shadow: 0 6px 0 #ef9bb244;
+}
+.sticker-left { transform: rotate(-12deg) translateY(30px); }
+.sticker-right { transform: rotate(12deg) translateY(-20px); }
+
+.date {
+  margin: 5px 0 0;
+  color: #a56c79;
+  letter-spacing: .15em;
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+h1, h2 {
+  margin: 0;
+  font-weight: 700;
+  line-height: .9;
+}
+
+h1 {
+  margin-top: 8px;
+  color: var(--brown);
+  font-size: clamp(4rem, 17vw, 7.4rem);
+  letter-spacing: -.045em;
+  transform: rotate(-2deg);
+  text-shadow: 3px 4px 0 #fff;
+}
+h1 span, h2 span { color: var(--hot-pink); }
+
+.little-line {
+  margin: 17px 0 4px;
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.5rem;
+  color: #87616a;
+  transform: rotate(2deg);
+}
+
+.pointing-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 2px 0 -5px;
+}
+.pointing-character {
+  width: 88px;
+  height: 86px;
+  overflow: hidden;
+  border-radius: 35% 45% 45% 40%;
+  background: white;
+  border: 3px solid #fff;
+  box-shadow: 0 5px 0 #ef9bb244;
+  transform: rotate(-7deg);
+}
+.pointing-character img {
+  width: 250%;
+  height: 180%;
+  object-fit: cover;
+  object-position: 5% 64%;
+  transform: translate(-2%, -18%);
+}
+.arrow-wrap { display: flex; align-items: center; gap: 2px; }
+.hand-arrow {
+  color: var(--hot-pink);
+  font-family: "Patrick Hand", cursive;
+  font-size: 55px;
+  transform: rotate(12deg);
+  line-height: .7;
+}
+.arrow-text {
+  color: #9a6571;
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.25rem;
+  transform: rotate(-5deg);
+}
+
+.gift-button, .continue-button, .again {
+  border: 0;
+  cursor: pointer;
+  color: white;
+  background: var(--hot-pink);
+  border-radius: 999px;
+  padding: 14px 23px;
+  box-shadow: 0 6px 0 #c94f76, 0 12px 22px #d66b8d33;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.gift-button { margin-top: 12px; font-size: 1rem; }
+.gift-button:hover, .continue-button:hover, .again:hover {
+  transform: translateY(-3px) rotate(-1deg);
+  box-shadow: 0 8px 0 #c94f76, 0 15px 25px #d66b8d33;
+}
+.scroll-cue { margin-top: 22px; color: #c88998; animation: bob 1.7s ease-in-out infinite; }
+
+.letter {
+  min-height: 100svh;
+  padding: 80px 20px 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #fff3f7;
+}
+
+.letter-card {
+  position: relative;
+  width: min(680px, 100%);
+  padding: 60px clamp(25px, 7vw, 65px) 48px;
+  background:
+    linear-gradient(#fffdf7, #fffdf7),
+    repeating-linear-gradient(0deg, transparent 0 30px, #f1cbd5 31px 32px);
+  border: 2px solid #e8b5c2;
+  border-radius: 9px 16px 11px 14px;
+  box-shadow: 9px 10px 0 #efb5c633, 0 25px 50px #a960771c;
+  transform: rotate(1deg);
+}
+.letter-card:before {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  border: 2px dashed #edc5cf;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.tape {
+  position: absolute;
+  width: 105px;
+  height: 30px;
+  background: #ffe8a9cc;
+  z-index: 3;
+}
+.tape-a { top: 62px; left: 50%; transform: translateX(-50%) rotate(-4deg); }
+.tape-b { display: none; }
+
+.scribble {
+  position: relative;
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.35rem;
+  color: var(--hot-pink);
+  transform: rotate(-4deg);
+}
+.heart-stamp {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  color: #ef7298;
+  font-size: 32px;
+  transform: rotate(12deg);
+}
+
+.letter-card h2 {
+  position: relative;
+  margin-top: 20px;
+  font-size: clamp(3.2rem, 12vw, 5.2rem);
+  color: var(--brown);
+  transform: rotate(-2deg);
+}
+
+.message {
+  position: relative;
+  margin: 30px 0 25px;
+  color: #694d56;
+  font-family: "Patrick Hand", cursive;
+  font-size: clamp(1.35rem, 4vw, 1.7rem);
+  line-height: 1.45;
+}
+.signature {
+  position: relative;
+  text-align: right;
+  color: var(--hot-pink);
+  font-family: "Patrick Hand", cursive;
+  font-size: 2rem;
+  transform: rotate(-3deg);
+}
+.little-hearts {
+  position: relative;
+  margin: 20px 0 25px;
+  text-align: center;
+  color: #ef7298;
+  letter-spacing: .2em;
+}
+.continue-button { position: relative; display: block; margin: auto; font-size: .95rem; }
+
+.ending {
+  min-height: 100svh;
+  padding: 80px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #dff5f5, #fff0f4 70%);
+}
+.ending-card {
+  width: min(600px, 100%);
+  text-align: center;
+  padding: 35px 22px 42px;
+  position: relative;
+  z-index: 2;
+}
+.ending h2 {
+  margin-top: 22px;
+  color: var(--brown);
+  font-size: clamp(3.6rem, 13vw, 6rem);
+  transform: rotate(-2deg);
+}
+.ending-copy {
+  margin: 25px auto;
+  color: #785761;
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.45rem;
+  line-height: 1.4;
+}
+.scene-photo {
+  width: min(420px, 88vw);
+  margin: 25px auto;
+  padding: 10px 10px 30px;
+  background: white;
+  border: 1px solid #ecd5d9;
+  box-shadow: 0 10px 25px #79505d22;
+  transform: rotate(2deg);
+}
+.scene-photo img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: 31% center;
+}
+.final-line {
+  color: var(--hot-pink);
+  font-family: "Patrick Hand", cursive;
+  font-size: 2rem;
+  transform: rotate(-3deg);
+}
+.final-name { color: #785761; font-family: "Patrick Hand", cursive; font-size: 1.3rem; }
+.again { margin-top: 20px; background: #7ebdcc; box-shadow: 0 6px 0 #5599a8; }
+
+.cloud { position: absolute; color: white; opacity: .65; font-size: 80px; }
+.cloud-one { top: 7%; left: 4%; }
+.cloud-two { right: 2%; bottom: 8%; font-size: 110px; }
+
+footer {
+  padding: 22px;
+  text-align: center;
+  background: #fff0f4;
+  color: #b27784;
+  font-family: "Patrick Hand", cursive;
+  font-size: 1rem;
+}
+
+.hidden { display: none !important; }
+
+@keyframes bob { 50% { transform: translateY(7px); } }
+@keyframes floaty { 50% { transform: translateY(-9px) rotate(8deg); } }
+
+@media (max-width: 600px) {
+  .hero { padding-top: 25px; }
+  .character-frame { height: 185px; }
+  .sticker { width: 38px; height: 38px; font-size: 20px; }
+  .pointing-character { width: 70px; height: 70px; }
+  .arrow-text { font-size: 1.05rem; }
+  .hand-arrow { font-size: 45px; }
+  .letter-card { padding-top: 55px; }
+  .tape-a { top: 50px; }
+  .message { font-size: 1.3rem; }
+  .scene-photo img { height: 180px; }
+}
